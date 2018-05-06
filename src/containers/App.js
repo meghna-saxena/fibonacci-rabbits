@@ -4,7 +4,7 @@ import './App.css';
 
 class App extends Component {
   state = {
-    monthWiseRabbits: [],
+    monthWiseRabbit: [],
     currentMonth: 0,
     prev: 0,
     current: 1
@@ -16,10 +16,10 @@ class App extends Component {
     const { prev, current } = this.state;
     const next = prev + current;
 
-    const updatedMonthWiseRabbits = [...this.state.monthWiseRabbits, { "month": newMonth, "rabbitCount": next }];
+    const updatedMonthWiseRabbits = [...this.state.monthWiseRabbit, { "month": newMonth, "rabbitCount": next }];
 
     this.setState({
-      monthWiseRabbits: updatedMonthWiseRabbits,
+      monthWiseRabbit: updatedMonthWiseRabbits,
       currentMonth: newMonth,
       prev: current,
       current: next
@@ -35,8 +35,8 @@ class App extends Component {
             <i className="em em-carrot"></i>
           </h1>
           <ul className="list-group">
-            {this.state.monthWiseRabbits.map(mwr => {
-              return <RabbitMonthPair mwr={mwr} key={mwr.month} />
+            {this.state.monthWiseRabbit.map(mwr => {
+              return <RabbitMonthPair month={mwr.month} count={mwr.rabbitCount} key={mwr.month} />
             })
             }
           </ul>

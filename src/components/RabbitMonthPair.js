@@ -2,17 +2,21 @@ import React from 'react';
 import Rabbit from '../components/Rabbit';
 
 const RabbitMonthPair = (props) => {
-    const { month, rabbitCount } = props.mwr;
+    const {month, count} = props
 
-    let result = [];
-    for (let i = 0; i < rabbitCount; i++) {
-        result = [...result, <Rabbit key={rabbitCount + i} />]
-    }
+    const result = [...Array(count).keys()]; //makes empty array of key/index till count value
+
+    const newResult = result.map((cnt, i) => {
+        return <Rabbit key={count + i} />
+    });
+
     return (
-        <li className="list-group-item"> 
-        Month: {month} <br />
-        {result}
-        </li>
+        <div className="result">
+            <li className="list-group-item">
+                Month:{month} <br />
+                {newResult}
+            </li>
+        </div>
     );
 }
 
