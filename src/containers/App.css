@@ -1,0 +1,33 @@
+ .App {
+  text-align: center;
+  margin-top: 65px;
+}
+
+.App i {
+ font-size: 26px;
+}
+
+h1 {
+ color: #e67e22;
+ font-size: 40px;
+}
+
+button {
+  padding: 10px 35px;
+  margin-top: 20px;
+  border-radius: 20px;
+  outline: none;
+  font-size: 18px;
+ background-color:#e67e22;
+ border: none;
+ color: #fff;
+}
+
+button:hover {
+  background-color: #eda25f;
+  
+}
+
+/* #month {
+  margin-right: 30px;
+}  */
